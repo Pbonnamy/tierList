@@ -9,9 +9,13 @@ body{
 }
 
 .itemStyle{
-  width: 120px;
-  height: 120px;
+  width: 115px;
+  height: 115px;
   margin: 5px;
+}
+
+.itemStyle:hover{
+  cursor: pointer;
 }
 
 .itemList{
@@ -21,4 +25,15 @@ body{
 
 .cat{
   min-height: 130px;
+}
+
+.parent {
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    overflow: hidden;
+    /* Magic */
+    display: flex;
+    align-items: center; /* vertical */
+    justify-content: center; /* horizontal */
 }

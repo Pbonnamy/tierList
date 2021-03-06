@@ -8,22 +8,35 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cliquez sur l'image de vrotre choix</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="tmpImg" class="modal-body d-flex flex-wrap justify-content-center">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid p-5">
       <h1 class="text-center mt-3 fw-bold">Tier List Maker <p class="h5">by Aeck</p></h1>
 
       <div class="d-flex mt-5">
         <div class="me-4 col-2">
-          <input id="itemLink" type="text" class="w-100 form-control" placeholder="Ajouter un item">
-          <button id="searchBtn" type="button" class="btn btn-success w-100 mt-3" >Chercher</button>
+          <input id="itemLink" type="text" class="w-100 form-control" placeholder="Ajouter un item" >
+          <button id="searchBtn" type="button" class="btn btn-success w-100 mt-3">Chercher</button>
           <button type="button" class="btn btn-danger w-100 mt-3" onclick="delItem()">Vider</button>
           <div class="d-flex justify-content-center">
             <div id="itemList" class="mt-3 itemList border border-secondary w-100 d-flex flex-wrap justify-content-center">
-
             </div>
           </div>
         </div>
 
-        <img src="data:image/png;base64, Ly9zMS5xd2FudC5jb20vdGh1bWJyLzIwMHgyMDAvYi82L2ViYWMwMzliODZiY2ZmZWUwMmM3YjFhMTcyMjQ1NDEzMWVjYWE1MDI1OTA1OTIxNTY2ZTUxM2NjMjJhMzQ3LzgyNTAucG5nP3U9aHR0cCUzQSUyRiUyRnd3dy5pY29uZS1wbmcuY29tJTJGcG5nJTJGOCUyRjgyNTAucG5nJnE9MCZiPTEmcD0wJmE9MCZiX2lkPU9JUC5zYmlsNjVCY3VpR2hUeEN4dDVEZlJnSGFIYQ==" alt="">
         <table id="table"  class="table table-secondary table-bordered border-secondary">
           <tr class="cat">
             <td class="w-25 p-4 text-center bg-danger h1">God Tier</td>
