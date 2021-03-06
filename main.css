@@ -1,0 +1,24 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: url('asset/background.jpg');
+  background-size: cover;
+}
+
+.itemStyle{
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+}
+
+.itemList{
+  min-height: 130px;
+  background-color: #E2E3E5;
+}
+
+.cat{
+  min-height: 130px;
+}
