@@ -1,10 +1,26 @@
 
-function addItem(){
+// function addItem(){
+//   const link = document.getElementById('itemLink').value;
+//   const list = document.getElementById('itemList');
+//
+//   list.innerHTML+='<img src="'+link+'" class="itemStyle d-block">'
+// }
+
+$("#searchBtn").click(function(){
   const link = document.getElementById('itemLink').value;
   const list = document.getElementById('itemList');
+  $.ajax({
+     url : 'contactApi.php',
+     type : 'GET',
+     data : 'query='+link,
+     dataType : 'html',
+     success : function(result){
+       list.innerHTML+='<img src="'+result+'" class="itemStyle d-block">'
+     }
+  });
+});
 
-  list.innerHTML+='<img src="'+link+'" class="itemStyle d-block">'
-}
+
 
 function delItem(){
   const list = document.getElementById('itemList');

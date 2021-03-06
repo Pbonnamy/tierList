@@ -13,9 +13,8 @@
 
       <div class="d-flex mt-5">
         <div class="me-4 col-2">
-          <button id="toImg" type="button" class="btn btn-primary w-100">Exporter la tier liste</button>
-          <input id="itemLink" type="text" class="w-100 form-control mt-5" placeholder="Ajouter un item (img url)">
-          <button type="button" class="btn btn-success w-100 mt-3" onclick="addItem()">Valider</button>
+          <input id="itemLink" type="text" class="w-100 form-control" placeholder="Ajouter un item">
+          <button id="searchBtn" type="button" class="btn btn-success w-100 mt-3" >Chercher</button>
           <button type="button" class="btn btn-danger w-100 mt-3" onclick="delItem()">Vider</button>
           <div class="d-flex justify-content-center">
             <div id="itemList" class="mt-3 itemList border border-secondary w-100 d-flex flex-wrap justify-content-center">
@@ -24,6 +23,7 @@
           </div>
         </div>
 
+        <img src="data:image/png;base64, Ly9zMS5xd2FudC5jb20vdGh1bWJyLzIwMHgyMDAvYi82L2ViYWMwMzliODZiY2ZmZWUwMmM3YjFhMTcyMjQ1NDEzMWVjYWE1MDI1OTA1OTIxNTY2ZTUxM2NjMjJhMzQ3LzgyNTAucG5nP3U9aHR0cCUzQSUyRiUyRnd3dy5pY29uZS1wbmcuY29tJTJGcG5nJTJGOCUyRjgyNTAucG5nJnE9MCZiPTEmcD0wJmE9MCZiX2lkPU9JUC5zYmlsNjVCY3VpR2hUeEN4dDVEZlJnSGFIYQ==" alt="">
         <table id="table"  class="table table-secondary table-bordered border-secondary">
           <tr class="cat">
             <td class="w-25 p-4 text-center bg-danger h1">God Tier</td>
@@ -48,30 +48,10 @@
         </table>
       </div>
 
-      <a id="imgPreview">
-
-      </a>
-
     </div>
   </body>
   <script src="Sortable.js"></script>
   <script src="jquery.min.js"></script>
   <script type="text/javascript" src="script.js"></script>
-  <script type="text/javascript" src="html2canvas.js"></script>
   <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-        $("#toImg").on('click', function() {
-          html2canvas(document.querySelector("#table"),{letterRendering: 1, allowTaint: true, useCORS: true, scrollY: -window.scrollY}).then(canvas => {
-            document.getElementById('imgPreview').appendChild(canvas);
-            var img = canvas.toDataURL("image/png");
-            document.getElementById('imgPreview').removeChild(canvas);
-            var tab = window.open('about:blank', '_blank');
-            tab.document.write('<img style="display:block; margin-left: auto; margin-right:auto; margin-top:100px;" src="'+img+'"/>');
-          });
-        });
-    });
-
-  </script>
 </html>
