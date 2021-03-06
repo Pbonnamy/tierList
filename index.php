@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Tier List Maker</title>
     <link rel="icon" href="asset/icon.png">
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <div class="container-fluid p-5">
@@ -13,7 +13,8 @@
 
       <div class="d-flex mt-5">
         <div class="me-4 col-2">
-          <input id="itemLink" type="text" class="w-100 form-control" placeholder="Ajouter un item (img url)">
+          <button id="toImg" type="button" class="btn btn-primary w-100">Exporter la tier liste</button>
+          <input id="itemLink" type="text" class="w-100 form-control mt-5" placeholder="Ajouter un item (img url)">
           <button type="button" class="btn btn-success w-100 mt-3" onclick="addItem()">Valider</button>
           <button type="button" class="btn btn-danger w-100 mt-3" onclick="delItem()">Vider</button>
           <div class="d-flex justify-content-center">
@@ -23,7 +24,7 @@
           </div>
         </div>
 
-        <table id="table" class="table table-secondary table-bordered border-secondary">
+        <table id="table"  class="table table-secondary table-bordered border-secondary">
           <tr class="cat">
             <td class="w-25 p-4 text-center bg-danger h1">God Tier</td>
             <td id="cat0" class="d-flex flex-wrap cat"></td>
@@ -47,18 +48,30 @@
         </table>
       </div>
 
-      <!-- <div class="input-group">
-        <input id="catName" type="text" class="form-control mt-5 mx-5" placeholder="Ajouter une catégorie (max 6)">
-      </div>
-      <div class="d-grid gap-2 col-10 mx-auto mt-3">
-        <button class="btn btn-success" type="button" onclick="addCategory()">Valider</button>
-      </div> -->
+      <a id="imgPreview">
+
+      </a>
 
     </div>
   </body>
   <script src="Sortable.js"></script>
+  <script src="jquery.min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="html2canvas.js"></script>
   <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
-</html>
 
-<img src="" alt="">
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $("#toImg").on('click', function() {
+          html2canvas(document.querySelector("#table"),{letterRendering: 1, allowTaint: true, useCORS: true, scrollY: -window.scrollY}).then(canvas => {
+            document.getElementById('imgPreview').appendChild(canvas);
+            var img = canvas.toDataURL("image/png");
+            document.getElementById('imgPreview').removeChild(canvas);
+            var tab = window.open('about:blank', '_blank');
+            tab.document.write('<img style="display:block; margin-left: auto; margin-right:auto; margin-top:100px;" src="'+img+'"/>');
+          });
+        });
+    });
+
+  </script>
+</html>
