@@ -31,7 +31,6 @@ echo
 <img src="'.$obj->data->result->items[4]->thumbnail.'" class="itemStyle m-3" onclick="addItem(\''.$obj->data->result->items[4]->thumbnail.'\')">
 <img src="'.$obj->data->result->items[5]->thumbnail.'" class="itemStyle m-3" onclick="addItem(\''.$obj->data->result->items[5]->thumbnail.'\')">';
 
-
 curl_close($ch);
 
 ?>
