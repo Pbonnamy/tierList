@@ -19,8 +19,6 @@ curl_setopt($ch, CURLOPT_USERAGENT,
 // echo 'https://api.qwant.com/api/search/images?count=1&q='.$query.'&t=images&safesearch=1&locale=fr_FR&uiv=4';
 
 $result = curl_exec($ch);
-
-$result = curl_exec($ch);
 $obj = json_decode($result);
 
 echo
